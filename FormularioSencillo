@@ -1,0 +1,36 @@
+$Form=New-Object System.Windows.Forms.Form
+$Form.Text="Form"
+$Form.Size=New-Object System.Drawing.Size(500,500)
+
+$Label=New-Object System.Windows.Forms.Label
+$Label.Text="BUCLE DE FORMULARIOS"
+$Label.AutoSize=$True
+$Label.Location=New-Object System.Drawing.Size(180,160)
+
+$Button=New-Object System.Windows.Forms.Button
+$Button.Size=New-Object System.Drawing.Size(75,23)
+$Button.Text="!DUPLICA¡"
+$Button.Location=New-Object System.Drawing.Size(200,200)
+
+$Button.add_Click{
+$Form2=New-Object System.Windows.Forms.Form
+$Form2.Text="Form"
+$Form2.Size=New-Object System.Drawing.Size(500,500)
+
+$Label2=New-Object System.Windows.Forms.Label
+$Label2.Text="BUBLE DE FORMULARIOS"
+$Label2.AutoSize=$True
+$Label2.Location=New-Object System.Drawing.Size(180,160)
+
+$Button2=New-Object System.Windows.Forms.Button
+$Button2.Size=New-Object System.Drawing.Size(75,23)
+$Button2.Text="Botón"
+$Button2.Location=New-Object System.Drawing.Size(200,200)
+$Form2.Controls.Add($Label)
+$Form2.Controls.Add($Button)
+$Form2.ShowDialog()
+}
+$Form.Controls.Add($Label)
+$Form.Controls.Add($Button)
+
+$Form.ShowDialog()
