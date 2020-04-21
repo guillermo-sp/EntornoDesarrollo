@@ -1,0 +1,681 @@
+$MouseEventSig=@'
+[DllImport("user32.dll",CharSet=CharSet.Auto, CallingConvention=CallingConvention.StdCall)]
+public static extern void mouse_event(long dwFlags, long dx, long dy, long cButtons, long dwExtraInfo);
+'@
+$MouseEvent = Add-Type -memberDefinition $MouseEventSig -name "MouseEventWinApi" -passThru
+
+$Form=New-Object System.Windows.Forms.Form
+$Form.Text="Form"
+$Form.Size=New-Object System.Drawing.Size(500,500)
+$Form.BackColor= 'DarkGreen'
+$Form.StartPosition              = 'CenterScreen'
+
+
+    
+
+    $PictureBox6=New-Object System.Windows.Forms.PictureBox
+    $PictureBox6.Width=500
+    $PictureBox6.Height=500
+    $PictureBox6.Location=New-Object System.Drawing.Point(0,50)
+    $PictureBox6.ImageLocation="https://cnnespanol2.files.wordpress.com/2020/02/200130165125-corona-virus-cdc-image-full-169.jpg?quality=100&strip=info&w=460&h=260&crop=1"
+    $PictureBox6.SizeMode = [System.Windows.Forms.PictureBoxSizeMode]::Zoom
+
+
+
+
+
+$Label=New-Object System.Windows.Forms.Label
+$Label.Text="¡BIENVENIDO A CORON-APP!" 
+$Label.AutoSize=$True
+$Label.Location=New-Object System.Drawing.Size(180,80)
+$Label.BackColor='lightblue'
+
+
+
+$Button2=New-Object System.Windows.Forms.Button
+$Button2.Size=New-Object System.Drawing.Size(75,23)
+$Button2.Text="REGISTRO"
+$Button2.Location=New-Object System.Drawing.Size(270,120)
+$Button2.Image="https://i.pinimg.com/originals/8b/d2/c3/8bd2c3f6918d8c6449061e1ca1e6baa5.png"
+$Button2.BackColor='Red'
+
+$Button=New-Object System.Windows.Forms.Button
+$Button.Size=New-Object System.Drawing.Size(75,23)
+$Button.Text="LOGIN"
+$Button.Location=New-Object System.Drawing.Size(180,120)
+$Button.BackColor='Red'
+
+
+$Button.add_Click{
+$Form2=New-Object System.Windows.Forms.Form
+$Form2.Text="Form"
+$Form2.Size=New-Object System.Drawing.Size(500,500)
+$Form2.BackColor= 'Darkgreen'
+
+
+$Label2=New-Object System.Windows.Forms.Label
+$Label2.Text="Login"
+$Label2.AutoSize=$True
+$Label2.Location=New-Object System.Drawing.Size(180,160)
+
+$Label3=New-Object System.Windows.Forms.Label
+$Label3.Text="Introduzca nombre de usuario"
+$Label3.AutoSize=$True
+$Label3.Location=New-Object System.Drawing.Size(180,180)
+
+$TextBox=New-Object System.Windows.Forms.TextBox
+$TextBox.Text="guillemito"
+$TextBox.Size=New-Object System.Drawing.Size(200,200)
+$TextBox.Location=New-Object System.Drawing.Size(180,210)
+
+$Label4=New-Object System.Windows.Forms.Label
+$Label4.Text="Introduzca la contraseña"
+$Label4.AutoSize=$True
+$Label4.Location=New-Object System.Drawing.Size(180,240)
+
+$TextBox2=New-Object System.Windows.Forms.TextBox
+$TextBox2.Text="guillemito123"
+$TextBox2.Size=New-Object System.Drawing.Size(200,200)
+$TextBox2.Location=New-Object System.Drawing.Size(180,260)
+
+$Button3=New-Object System.Windows.Forms.Button
+$Button3.Size=New-Object System.Drawing.Size(75,23)
+$Button3.Text="ENTRAR"
+$Button3.BackColor='Red'
+$Button3.Location=New-Object System.Drawing.Size(220,300)
+    $Button3.add_Click{
+
+    if ($TextBox -ne 'guillemito'){
+        
+        $Form45=New-Object System.Windows.Forms.Form
+        $Form45.Text="Form"
+        $Form45.Size=New-Object System.Drawing.Size(700,500)
+        $Form45.BackColor= 'DarkGreen'
+        $Form45.StartPosition              = 'CenterScreen'
+
+        $Label45=New-Object System.Windows.Forms.Label
+        $Label45.Text="El nombre de usuario no es correcto, vas a acceder con el usuario invitado"
+        $Label45.AutoSize=$True
+        $Label45.Location=New-Object System.Drawing.Size(180,240)
+        $Label45.BackColor='Yellow'
+
+        $Form45.Controls.Add($Label45)
+        $Form45.ShowDialog()
+
+}
+
+
+    $Form=New-Object System.Windows.Forms.Form
+$Form.Text="Form"
+$Form.Size=New-Object System.Drawing.Size(650,500)
+$Form.BackColor= 'DarkGreen'
+$Form.StartPosition              = 'CenterScreen'
+
+
+$Label111=New-Object System.Windows.Forms.Label
+$Label111.Text="CORON-APP"
+
+$Label111.Location=New-Object System.Drawing.Size(275,20)
+
+$Label222=New-Object System.Windows.Forms.Label
+$Label222.Text="Os presento CORON-APP, una aplicacion para estar
+al dia con todo lo que esta relacionado 
+con el coronavirus"
+$Label222.AutoSize=$True
+$Label222.Location=New-Object System.Drawing.Size(180,70)
+
+$Label333=New-Object System.Windows.Forms.Label
+$Label333.Text="INDICA LA OPCION QUE USTED QUIERA EJECUTAR"
+$Label333.AutoSize=$True
+$Label333.Location=New-Object System.Drawing.Size(180,150)
+
+ $PictureBox55=New-Object System.Windows.Forms.PictureBox
+    $PictureBox55.Width=250
+    $PictureBox55.Height=350
+    $PictureBox55.Location=New-Object System.Drawing.Point(-20,65)
+    $PictureBox55.ImageLocation="https://img.desmotivaciones.es/201009/La_Tipica_Foto_Alargada.jpg"
+    $PictureBox55.SizeMode = [System.Windows.Forms.PictureBoxSizeMode]::Zoom
+
+    $PictureBox66=New-Object System.Windows.Forms.PictureBox
+    $PictureBox66.Width=100
+    $PictureBox66.Height=350
+    $PictureBox66.Location=New-Object System.Drawing.Point(500,65)
+    $PictureBox66.ImageLocation="https://es.xkcd.com/site_media/strips/tall_infographics.png"
+    $PictureBox66.SizeMode = [System.Windows.Forms.PictureBoxSizeMode]::Zoom
+
+
+$Button111=New-Object System.Windows.Forms.Button
+$Button111.Size=New-Object System.Drawing.Size(100,70)
+$Button111.Text="ULTIMAS NOTICIAS"
+$Button111.Location=New-Object System.Drawing.Size(230,200)
+$Button111.BackColor='wHITE'
+
+$Button111.add_Click{
+gc C:\palabras\palabras.txt | %{
+    
+    $url='https://www.google.com/search?q=noticias+verdaderas+coronavirus&rlz=1C1CHBF_esES820ES820&oq=noticias+verdaderas+coronavirus&aqs=chrome..69i57.14312j0j7&sourceid=chrome&ie=UTF-8'
+    Start-Process chrome.exe -ArgumentList @('-incognito',$url)
+ 
+    
+    Start-Sleep -Seconds 1
+ 
+    
+    [System.Windows.Forms.Cursor]::Position = New-Object System.Drawing.Point(427,399)
+    
+    [System.Windows.Forms.SendKeys]::SendWait($_)
+    [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+ 
+    
+    Start-Sleep -Seconds 1 
+    Break
+}
+
+
+}
+
+$Button222=New-Object System.Windows.Forms.Button
+$Button222.Size=New-Object System.Drawing.Size(100,70)
+$Button222.Text="NOTICIAS FALSAS"
+$Button222.Location=New-Object System.Drawing.Size(330,200)
+$Button222.BackColor='WHITE'
+
+$Button222.add_Click{
+gc C:\palabras\palabras.txt | %{
+    
+    $url='https://www.google.com/search?q=noticias+falsas+coronavirus&rlz=1C1CHBF_esES820ES820&oq=noticias+falsas+coronavirus&aqs=chrome..69i57.6695j0j7&sourceid=chrome&ie=UTF-8'
+    Start-Process chrome.exe -ArgumentList @('-incognito',$url)
+ 
+   
+    Start-Sleep -Seconds 1
+ 
+    
+    [System.Windows.Forms.Cursor]::Position = New-Object System.Drawing.Point(427,399)
+    
+    [System.Windows.Forms.SendKeys]::SendWait($_)
+    [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+ 
+    
+    Start-Sleep -Seconds 1
+    Break
+}
+}
+
+$Button333=New-Object System.Windows.Forms.Button
+$Button333.Size=New-Object System.Drawing.Size(100,70)
+$Button333.Text="PRODUCTOS CON LOS QUE SOBREVIVIRAS AL CORONAVIRUS"
+$Button333.Location=New-Object System.Drawing.Size(280,270)
+$Button333.BackColor='WHITE'
+
+$Button333.add_Click{
+gc C:\palabras\palabras.txt | %{
+    
+    $url='https://www.elplural.com/sociedad/productos-vendiendo-amazon-coronavirus_234969102'
+    Start-Process chrome.exe -ArgumentList @('-incognito',$url)
+ 
+    
+    Start-Sleep -Seconds 1
+ 
+    
+    [System.Windows.Forms.Cursor]::Position = New-Object System.Drawing.Point(427,399)
+    
+    [System.Windows.Forms.SendKeys]::SendWait($_)
+    [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+ 
+    
+    Start-Sleep -Seconds 1
+    Break
+}
+}
+
+$Button444=New-Object System.Windows.Forms.Button
+$Button444.Size=New-Object System.Drawing.Size(100,70)
+$Button444.Text="¿PADECES ESTOS SINTOMAS?"
+$Button444.Location=New-Object System.Drawing.Size(280,340)
+$Button444.BackColor='WHITE'
+
+$Button444.add_Click{
+
+$Form8=New-Object System.Windows.Forms.Form
+$Form8.Text="Form"
+$Form8.Size=New-Object System.Drawing.Size(650,500)
+$Form8.BackColor= 'darkGreen'
+$Form8.StartPosition              = 'CenterScreen'
+
+$Label666 = New-Object System.Windows.Forms.Label
+$Label666.Text = 'SINTOMAS CORONAVIRUS'
+$Label666.AutoSize=$True
+$Label666.Location=New-Object System.Drawing.Size(250,70)
+
+$Label777 = New-Object System.Windows.Forms.Label
+$Label777.Text = 'FIEBRE,TOS Y DIFICULTAD PARA RESPIRAR'
+$Label777.AutoSize=$True
+$Label777.Location=New-Object System.Drawing.Size(200,100)
+
+
+$Label444 = New-Object System.Windows.Forms.Label
+$Label444.Text = '¡IMPORTANTE!'
+$Label444.AutoSize=$True
+$Label444.Location=New-Object System.Drawing.Size(275,130)
+
+$Label555= New-Object System.Windows.Forms.Label
+$Label555.Text = '¡SI USTED PADECE, ESTOS SINTOMAS
+NO DUDE EN LLAMAR AL TELEFONO 
+QUE LE PROPORCIONAMOS!'
+$Label555.AutoSize=$True
+$Label555.Location=New-Object System.Drawing.Size(240,150)
+
+
+$PictureBox55=New-Object System.Windows.Forms.PictureBox
+    $PictureBox55.Width=250
+    $PictureBox55.Height=350
+    $PictureBox55.Location=New-Object System.Drawing.Point(-20,65)
+    $PictureBox55.ImageLocation="https://img.desmotivaciones.es/201009/La_Tipica_Foto_Alargada.jpg"
+    $PictureBox55.SizeMode = [System.Windows.Forms.PictureBoxSizeMode]::Zoom
+
+    $PictureBox66=New-Object System.Windows.Forms.PictureBox
+    $PictureBox66.Width=100
+    $PictureBox66.Height=350
+    $PictureBox66.Location=New-Object System.Drawing.Point(500,65)
+    $PictureBox66.ImageLocation="https://es.xkcd.com/site_media/strips/tall_infographics.png"
+    $PictureBox66.SizeMode = [System.Windows.Forms.PictureBoxSizeMode]::Zoom
+
+
+    $Button888=New-Object System.Windows.Forms.Button
+    $Button888.Size=New-Object System.Drawing.Size(100,50)
+    $Button888.Text="TELEFONO"
+    $Button888.Location=New-Object System.Drawing.Size(280,340)
+    $Button888.BackColor='WHITE'
+
+    $Button888.add_Click{
+
+    $url='https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/telefonos.htm'
+    Start-Process chrome.exe -ArgumentList @('-incognito',$url)
+    
+     }
+
+$Form8.Controls.Add($Button888)
+$Form8.Controls.Add($Label777)
+$Form8.Controls.Add($PictureBox55)
+$Form8.Controls.Add($PictureBox66)
+$Form8.Controls.Add($Label666)
+$Form8.Controls.Add($Label444)
+$Form8.Controls.Add($Label555)
+$Form8.ShowDialog()
+
+}
+
+
+
+
+
+
+
+$Form.Controls.Add($Label111)
+$Form.Controls.Add($Label222)
+$Form.Controls.Add($Label333)
+$Form.Controls.Add($PictureBox55)
+$Form.Controls.Add($PictureBox66)
+$Form.Controls.Add($Button111)
+$Form.Controls.Add($Button222)
+$Form.Controls.Add($Button333)
+$Form.Controls.Add($Button444)
+$Form.ShowDialog();
+     
+     
+    
+    }
+
+$Form2.Controls.Add($Label2)
+$Form2.Controls.Add($Label3)
+$Form2.Controls.Add($TextBox)
+$Form2.Controls.Add($TextBox2)
+$Form2.Controls.Add($Label4)
+$Form2.Controls.Add($Button3)
+
+
+$Form2.ShowDialog()
+
+}
+
+$Button2.add_Click{
+$Form3=New-Object System.Windows.Forms.Form
+$Form3.Text="Form"
+$Form3.Size=New-Object System.Drawing.Size(500,500)
+$Form3.BackColor= 'Darkgreen'
+$Form3.StartPosition              = 'CenterScreen'
+
+
+$Label6=New-Object System.Windows.Forms.Label
+$Label6.Text="Registro"
+$Label6.AutoSize=$True
+$Label6.Location=New-Object System.Drawing.Size(180,160)
+
+$Label7=New-Object System.Windows.Forms.Label
+$Label7.Text="Introduzca nombre "
+$Label7.AutoSize=$True
+$Label7.Location=New-Object System.Drawing.Size(180,180)
+
+
+$TextBox4=New-Object System.Windows.Forms.TextBox
+$TextBox4.Text="guillemito"
+$TextBox4.Size=New-Object System.Drawing.Size(200,200)
+$TextBox4.Location=New-Object System.Drawing.Size(180,210)
+
+$Label4=New-Object System.Windows.Forms.Label
+$Label4.Text="Introduzca la apellido"
+$Label4.AutoSize=$True
+$Label4.Location=New-Object System.Drawing.Size(180,240)
+
+$TextBox5=New-Object System.Windows.Forms.TextBox
+$TextBox5.Text="sanchez"
+$TextBox5.Size=New-Object System.Drawing.Size(200,200)
+$TextBox5.Location=New-Object System.Drawing.Size(180,260)
+
+$Label8=New-Object System.Windows.Forms.Label
+$Label8.Text="Introduzca numero de telefono "
+$Label8.AutoSize=$True
+$Label8.Location=New-Object System.Drawing.Size(180,290)
+
+$TextBox9=New-Object System.Windows.Forms.TextBox
+$TextBox9.Text="62258075"
+$TextBox9.Size=New-Object System.Drawing.Size(200,200)
+$TextBox9.Location=New-Object System.Drawing.Size(180,310)
+
+$Label9=New-Object System.Windows.Forms.Label
+$Label9.Text="Introduzca correo electronico "
+$Label9.AutoSize=$True
+$Label9.Location=New-Object System.Drawing.Size(180,340)
+
+$TextBox10=New-Object System.Windows.Forms.TextBox
+$TextBox10.Text="guillermosp2001@gmail.com"
+$TextBox10.Size=New-Object System.Drawing.Size(200,200)
+$TextBox10.Location=New-Object System.Drawing.Size(180,360)
+
+$Button9=New-Object System.Windows.Forms.Button
+$Button9.Size=New-Object System.Drawing.Size(75,23)
+$Button9.Text="ENTRAR"
+$Button9.BackColor='Red'
+$Button9.Location=New-Object System.Drawing.Size(220,385)
+$Button9.add_Click{
+    $Form8=New-Object System.Windows.Forms.Form
+    $Form8.Text="Form"
+    $Form8.Size=New-Object System.Drawing.Size(500,500)
+    $Form8.BackColor= 'darkgreen'
+    $Form8.StartPosition              = 'CenterScreen'
+
+    $Label20=New-Object System.Windows.Forms.Label
+    $Label20.Text="TE HAS REGISTRADO CORRECTAMENTE"
+    $Label20.AutoSize=$True
+    $Label20.Location=New-Object System.Drawing.Size(180,160)
+
+
+    $PictureBox2=New-Object System.Windows.Forms.PictureBox
+    $PictureBox2.Width=246
+    $PictureBox2.Height=144
+    $PictureBox2.Location=New-Object System.Drawing.Point(150,24)
+    $PictureBox2.ImageLocation="https://pngimage.net/wp-content/uploads/2018/06/welcome-png-2.png"
+    $PictureBox2.SizeMode = [System.Windows.Forms.PictureBoxSizeMode]::Zoom
+
+    $Label21=New-Object System.Windows.Forms.Label
+    $Label21.Text="GRACIAS POR APOYAR A NUESTRA COMUNIDAD "
+    $Label21.AutoSize=$True
+    $Label21.Location=New-Object System.Drawing.Size(180,180)
+
+    $Button60=New-Object System.Windows.Forms.Button
+    $Button60.Size=New-Object System.Drawing.Size(90,50)
+    $Button60.Text="COMIENZA"
+    $Button60.BackColor='Red'
+    $Button60.Location=New-Object System.Drawing.Size(220,200)
+
+    $Button60.add_Click{
+    $Form=New-Object System.Windows.Forms.Form
+$Form.Text="Form"
+$Form.Size=New-Object System.Drawing.Size(650,500)
+$Form.BackColor= 'DarkGreen'
+$Form.StartPosition              = 'CenterScreen'
+
+
+$Label111=New-Object System.Windows.Forms.Label
+$Label111.Text="CORON-APP"
+
+$Label111.Location=New-Object System.Drawing.Size(275,20)
+
+$Label222=New-Object System.Windows.Forms.Label
+$Label222.Text="Os presento CORON-APP, una aplicacion para estar
+al dia con todo lo que esta relacionado 
+con el coronavirus"
+$Label222.AutoSize=$True
+$Label222.Location=New-Object System.Drawing.Size(180,70)
+
+$Label333=New-Object System.Windows.Forms.Label
+$Label333.Text="INDICA LA OPCION QUE USTED QUIERA EJECUTAR"
+$Label333.AutoSize=$True
+$Label333.Location=New-Object System.Drawing.Size(180,150)
+
+ $PictureBox55=New-Object System.Windows.Forms.PictureBox
+    $PictureBox55.Width=250
+    $PictureBox55.Height=350
+    $PictureBox55.Location=New-Object System.Drawing.Point(-20,65)
+    $PictureBox55.ImageLocation="https://img.desmotivaciones.es/201009/La_Tipica_Foto_Alargada.jpg"
+    $PictureBox55.SizeMode = [System.Windows.Forms.PictureBoxSizeMode]::Zoom
+
+    $PictureBox66=New-Object System.Windows.Forms.PictureBox
+    $PictureBox66.Width=100
+    $PictureBox66.Height=350
+    $PictureBox66.Location=New-Object System.Drawing.Point(500,65)
+    $PictureBox66.ImageLocation="https://es.xkcd.com/site_media/strips/tall_infographics.png"
+    $PictureBox66.SizeMode = [System.Windows.Forms.PictureBoxSizeMode]::Zoom
+
+
+$Button111=New-Object System.Windows.Forms.Button
+$Button111.Size=New-Object System.Drawing.Size(100,70)
+$Button111.Text="ULTIMAS NOTICIAS"
+$Button111.Location=New-Object System.Drawing.Size(230,200)
+$Button111.BackColor='wHITE'
+
+$Button111.add_Click{
+gc C:\palabras\palabras.txt | %{
+    
+    $url='https://www.google.com/search?q=noticias+verdaderas+coronavirus&rlz=1C1CHBF_esES820ES820&oq=noticias+verdaderas+coronavirus&aqs=chrome..69i57.14312j0j7&sourceid=chrome&ie=UTF-8'
+    Start-Process chrome.exe -ArgumentList @('-incognito',$url)
+ 
+    
+    Start-Sleep -Seconds 1
+ 
+   
+    [System.Windows.Forms.Cursor]::Position = New-Object System.Drawing.Point(427,399)
+    
+    [System.Windows.Forms.SendKeys]::SendWait($_)
+    [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+ 
+    
+    Start-Sleep -Seconds 1 
+    Break
+}
+
+
+}
+
+$Button222=New-Object System.Windows.Forms.Button
+$Button222.Size=New-Object System.Drawing.Size(100,70)
+$Button222.Text="NOTICIAS FALSAS"
+$Button222.Location=New-Object System.Drawing.Size(330,200)
+$Button222.BackColor='WHITE'
+
+$Button222.add_Click{
+gc C:\palabras\palabras.txt | %{
+    
+    $url='https://www.google.com/search?q=noticias+falsas+coronavirus&rlz=1C1CHBF_esES820ES820&oq=noticias+falsas+coronavirus&aqs=chrome..69i57.6695j0j7&sourceid=chrome&ie=UTF-8'
+    Start-Process chrome.exe -ArgumentList @('-incognito',$url)
+ 
+    
+    Start-Sleep -Seconds 1
+ 
+    
+    [System.Windows.Forms.Cursor]::Position = New-Object System.Drawing.Point(427,399)
+    
+    [System.Windows.Forms.SendKeys]::SendWait($_)
+    [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+ 
+   
+    Start-Sleep -Seconds 1
+    Break
+}
+}
+
+$Button333=New-Object System.Windows.Forms.Button
+$Button333.Size=New-Object System.Drawing.Size(100,70)
+$Button333.Text="PRODUCTOS CON LOS QUE SOBEVIVIRAS AL CORONAVIRUS"
+$Button333.Location=New-Object System.Drawing.Size(280,270)
+$Button333.BackColor='WHITE'
+
+$Button333.add_Click{
+gc C:\palabras\palabras.txt | %{
+    
+    $url='https://www.elplural.com/sociedad/productos-vendiendo-amazon-coronavirus_234969102'
+    Start-Process chrome.exe -ArgumentList @('-incognito',$url)
+ 
+   
+    Start-Sleep -Seconds 1
+ 
+    
+    [System.Windows.Forms.Cursor]::Position = New-Object System.Drawing.Point(427,399)
+  
+    [System.Windows.Forms.SendKeys]::SendWait($_)
+    [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+ 
+    Start-Sleep -Seconds 1
+    Break
+}
+}
+
+$Button444=New-Object System.Windows.Forms.Button
+$Button444.Size=New-Object System.Drawing.Size(100,70)
+$Button444.Text="¿PADECES ESTOS SINTOMAS?"
+$Button444.Location=New-Object System.Drawing.Size(280,340)
+$Button444.BackColor='WHITE'
+
+$Button444.add_Click{
+
+$Form8=New-Object System.Windows.Forms.Form
+$Form8.Text="Form"
+$Form8.Size=New-Object System.Drawing.Size(650,500)
+$Form8.BackColor= 'LightGreen'
+$Form8.StartPosition              = 'CenterScreen'
+
+$Label666 = New-Object System.Windows.Forms.Label
+$Label666.Text = 'SINTOMAS CORONAVIRUS'
+$Label666.AutoSize=$True
+$Label666.Location=New-Object System.Drawing.Size(250,70)
+
+$Label777 = New-Object System.Windows.Forms.Label
+$Label777.Text = 'FIEBRE,TOS Y DIFICULTAD PARA RESPIRAR'
+$Label777.AutoSize=$True
+$Label777.Location=New-Object System.Drawing.Size(200,100)
+
+
+$Label444 = New-Object System.Windows.Forms.Label
+$Label444.Text = '¡IMPORTANTE!'
+$Label444.AutoSize=$True
+$Label444.Location=New-Object System.Drawing.Size(275,130)
+
+$Label555= New-Object System.Windows.Forms.Label
+$Label555.Text = '¡SI USTED PADECE, ESTOS SINTOMAS
+NO DUDE EN LLAMAR AL TELEFONO 
+QUE LE PROPORCIONAMOS!'
+$Label555.AutoSize=$True
+$Label555.Location=New-Object System.Drawing.Size(240,150)
+
+
+$PictureBox55=New-Object System.Windows.Forms.PictureBox
+    $PictureBox55.Width=250
+    $PictureBox55.Height=350
+    $PictureBox55.Location=New-Object System.Drawing.Point(-20,65)
+    $PictureBox55.ImageLocation="https://img.desmotivaciones.es/201009/La_Tipica_Foto_Alargada.jpg"
+    $PictureBox55.SizeMode = [System.Windows.Forms.PictureBoxSizeMode]::Zoom
+
+    $PictureBox66=New-Object System.Windows.Forms.PictureBox
+    $PictureBox66.Width=100
+    $PictureBox66.Height=350
+    $PictureBox66.Location=New-Object System.Drawing.Point(500,65)
+    $PictureBox66.ImageLocation="https://es.xkcd.com/site_media/strips/tall_infographics.png"
+    $PictureBox66.SizeMode = [System.Windows.Forms.PictureBoxSizeMode]::Zoom
+
+
+    $Button888=New-Object System.Windows.Forms.Button
+    $Button888.Size=New-Object System.Drawing.Size(100,50)
+    $Button888.Text="TELEFONO"
+    $Button888.Location=New-Object System.Drawing.Size(280,340)
+    $Button888.BackColor='WHITE'
+
+    $Button888.add_Click{
+
+    $url='https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/telefonos.htm'
+    Start-Process chrome.exe -ArgumentList @('-incognito',$url)
+    
+     }
+
+$Form8.Controls.Add($Button888)
+$Form8.Controls.Add($Label777)
+$Form8.Controls.Add($PictureBox55)
+$Form8.Controls.Add($PictureBox66)
+$Form8.Controls.Add($Label666)
+$Form8.Controls.Add($Label444)
+$Form8.Controls.Add($Label555)
+$Form8.ShowDialog()
+
+}
+
+
+
+
+
+
+
+$Form.Controls.Add($Label111)
+$Form.Controls.Add($Label222)
+$Form.Controls.Add($Label333)
+$Form.Controls.Add($PictureBox55)
+$Form.Controls.Add($PictureBox66)
+$Form.Controls.Add($Button111)
+$Form.Controls.Add($Button222)
+$Form.Controls.Add($Button333)
+$Form.Controls.Add($Button444)
+$Form.ShowDialog();
+    }
+    
+
+     
+     $Form8.Controls.Add($Button60)
+     $Form8.Controls.Add($Label20)
+     $Form8.Controls.Add($Label21)
+     $Form8.Controls.Add($PictureBox2)
+     $Form8.Controls.Add($PictureBox3)
+     $Form8.ShowDialog()
+    
+    }
+
+
+
+$Form3.Controls.Add($Label6)
+$Form3.Controls.Add($Label7)
+$Form3.Controls.Add($TextBox4)
+$Form3.Controls.Add($TextBox5)
+$Form3.Controls.Add($Label4)
+$Form3.Controls.Add($Label8)
+$Form3.Controls.Add($Label9)
+$Form3.Controls.Add($TextBox9)
+$Form3.Controls.Add($Button9)
+$Form3.Controls.Add($TextBox10)
+
+$Form3.ShowDialog()
+
+}
+$Form.Controls.Add($Label)
+$Form.Controls.Add($Button)
+$Form.Controls.Add($Button2)
+
+$Form.Controls.Add($PictureBox6)
+
+
+$Form.ShowDialog()
